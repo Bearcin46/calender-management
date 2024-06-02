@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import * as eventRoutes from "./models/Events";
+import eventRoutes from "./routes/events.js";
 dotenv.config();
 
 const server = express();
