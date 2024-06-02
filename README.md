@@ -21,3 +21,7 @@ In the data base we use nosql database, MONGODB.To connect mongodb and our serve
 ```
 npm i mongoose
 ```
+
+## Schema
+
+Shema is important for server validation. Hence for this projects we have done schema for event details as well as for user details
