@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import * as eventRoutes from "./models/Events";
 dotenv.config();
 
 const server = express();
@@ -9,6 +10,7 @@ const server_port = process.env.SERVER_PORT;
 
 server.use(cors());
 server.use(express.json());
+server.use("/api/events", eventRoutes);
 
 const db_connection = process.env.MONGODB_URL;
 mongoose
