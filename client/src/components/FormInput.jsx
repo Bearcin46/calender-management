@@ -9,7 +9,7 @@ const FormInput = ({
   register,
 }) => {
   return (
-    <div className="flex flex-col mb-4 gap-2">
+    <div className="flex flex-col mb-4 gap-2 relative">
       <label htmlFor={name} className="font-semibold text-white">
         {label}
       </label>
@@ -17,10 +17,14 @@ const FormInput = ({
         type={type}
         placeholder={placeholder}
         name={name}
-        {...register}
-        className="px-5 py-2 rounded-sm"
+        {...register(name)}
+        className={`px-5 py-2 rounded-sm ${error ? "border-red-800" : ""}`}
       />
-      {error && <small>{error.message}</small>}
+      {error && error.message && (
+        <small className="text-xs font-semibold text-red-800">
+          {error.message}
+        </small>
+      )}
     </div>
   );
 };
